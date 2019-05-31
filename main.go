@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/beevik/ntp"
+	"log"
 	"time"
 )
 
@@ -14,7 +15,7 @@ func main() {
 	// Time server https://www.ntp-servers.net/servers.html
 	ntpTime, err := ntp.Time("ntp3.stratum2.ru")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 	fmt.Printf("Exact time using the NTP library: %v\n", ntpTime)
 
